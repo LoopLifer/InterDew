@@ -284,12 +284,12 @@ function pathImpact(mouseCoords,pathCoords,indexOfSvg){
         } 
 
         if (((mousePositionBefore[1] <= mouseXlineY) && (mouseXlineY <= mouseCoordsWOffset[1])  && (mouseXlineY >= path.SPoint[1]) && (mouseXlineY <= path.EPoint[1]))|| ((mousePositionBefore[0] <= mouseYlineX) && (mouseYlineX <= mouseCoordsWOffset[0]) && (mouseYlineX >= path.SPoint[0]) && (mouseYlineX <= path.EPoint[0]))){
-            let power = Math.floor(5 * Math.sqrt((mouseCoordsWOffset[0] - mousePositionBefore[0])**2 + (mouseCoordsWOffset[1] - mousePositionBefore[1])**2))
+            let power = Math.floor(6 * Math.sqrt((mouseCoordsWOffset[0] - mousePositionBefore[0])**2 + (mouseCoordsWOffset[1] - mousePositionBefore[1])**2))
             let pathCenterPosition = [((path.EPoint[0] - path.SPoint[0]) / 2 + path.SPoint[0]),((path.EPoint[1] - path.SPoint[1]) / 2 + path.SPoint[1])]
             //console.log(`bottom impact detected ${path.name}: ${mouseYlineX},${mouseXlineY} power: ${power} center: ${pathCenterPosition[0]},${pathCenterPosition[1]}`)
             pathAnimator([Math.floor(mouseYlineX),Math.floor(mouseXlineY)],power,pathCenterPosition,path.name)
         } else if (((mousePositionBefore[1] >= mouseXlineY) && (mouseXlineY >= mouseCoordsWOffset[1]) && (mouseXlineY >= path.SPoint[1]) && (mouseXlineY <= path.EPoint[1])) || ((mousePositionBefore[0] >= mouseYlineX) && (mouseYlineX >= mouseCoordsWOffset[0]) && (mouseYlineX >= path.SPoint[0]) && (mouseYlineX <= path.EPoint[0]))){
-            let power = Math.floor(5 * Math.sqrt((mouseCoordsWOffset[0] - mousePositionBefore[0])**2 + (mouseCoordsWOffset[1] - mousePositionBefore[1])**2))
+            let power = Math.floor(6 * Math.sqrt((mouseCoordsWOffset[0] - mousePositionBefore[0])**2 + (mouseCoordsWOffset[1] - mousePositionBefore[1])**2))
             
             let pathCenterPosition = [((path.EPoint[0] - path.SPoint[0]) / 2 + path.SPoint[0]),((path.EPoint[1] - path.SPoint[1]) / 2 + path.SPoint[1])]
             //console.log(`top impact detected ${path.name}: ${mouseYlineX},${mouseXlineY} power:${power} center: ${pathCenterPosition[0]},${pathCenterPosition[1]}`)
